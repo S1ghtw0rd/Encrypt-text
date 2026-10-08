@@ -1,5 +1,5 @@
 import time
-from caesar import decrypt_caesar_english, decrypt_caesar_russian
+from caesar import encrypt_caesar_english, encrypt_caesar_russian
 from atbash import decrypt_and_encrypt_atbash_english, decrypt_and_encrypt_atbash_russian
 
 def russian_menu():
@@ -15,7 +15,7 @@ def russian_menu():
 
     if choice_cipher == 1:
         shift = int(input("Сдвиг (Укажите цифру): "))
-        result = decrypt_caesar_russian(text, shift)
+        result = encrypt_caesar_russian(text, shift)
         print(f"Шифр Цезаря - {result}")
 
 
