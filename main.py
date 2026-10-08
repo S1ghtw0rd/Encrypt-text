@@ -7,7 +7,8 @@ def russian_menu():
     time.sleep(3)
 
     print()
-    print("Выберите как дешифровать текст (Если ответ получился неверным попробуйте другую кодировку)")
+    print("Выберите как зашифровать/дешифровать текст (Если ответ получился неверным попробуйте другую кодировку)")
+    print("Для того чтобы зашифровать используйте положительное число (например 3), а для дешифрования отрицательное (например -3)")
     print("1. Шифр Цезаря")
     print("2. Шифр Атбаш")
     time.sleep(2)
@@ -15,8 +16,11 @@ def russian_menu():
 
     if choice_cipher == 1:
         shift = int(input("Сдвиг (Укажите цифру): "))
-        result = encrypt_caesar_russian(text, shift)
-        print(f"Шифр Цезаря - {result}")
+        result_caesar = encrypt_caesar_russian(text, shift)
+        print(f"Шифр Цезаря - {result_caesar}")
+    if choice_cipher == 2:
+        result_atbash = decrypt_and_encrypt_atbash_russian(text)
+        print(f"Шифр Атбаш - {result_atbash}")
 
 
 print("Choice language")

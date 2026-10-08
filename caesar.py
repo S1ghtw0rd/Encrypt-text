@@ -6,10 +6,12 @@ def _encrypt_caesar(text, shift, alphabet):
     for letter in text:
         lower = letter.lower()
         if lower in alphabet:
-            new_letter = (ord(letter) + shift) % len(alphabet)
-
-        if letter.isupper():
-            result += chr(new_letter)
+            index = alphabet.index(lower)
+            cipher = (index + shift) % len(alphabet)
+            new_letter = alphabet[cipher]
+            if letter.isupper():
+                new_letter = new_letter.upper()
+            result += new_letter
         else:
             result += letter
     return result
